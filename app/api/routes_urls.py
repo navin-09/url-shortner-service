@@ -6,12 +6,12 @@ from app.services.shortener_service import UrlService
 from app.core.db import get_db
 from app.core.config import settings
 
-router = APIRouter(tags=["URLs"])
+router = APIRouter(prefix="/api/v1", tags=["URLs"])
 
 repo = PostgresUrlRepository()
 service = UrlService(repo, base_url=settings.BASE_URL)
 
-@router.post("/api/v1/urls", response_model=UrlCreateResponse)
+@router.post("/urls", response_model=UrlCreateResponse)
 def create_short_url(request_data: UrlCreateRequest, db: Session = Depends(get_db)):
     try:
         short_url, short_code = service.create_short_url(db, request_data.original_url)
