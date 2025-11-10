@@ -21,7 +21,9 @@ def base62_encode(num: int) -> str:
 class ShortCodeStrategy:
     """Strategy for deterministic short code generation."""
     def generate(self, url: str, length: int = 8) -> str:
-        hash_bytes = hashlib.sha256(url.encode()).digest()
+        # hash_bytes = hashlib.sha256(url.encode()).digest()
+        url_bytes = str(url).encode()
+        hash_bytes = hashlib.sha256(url_bytes).digest()
         hash_int = int.from_bytes(hash_bytes, "big")
         code = base62_encode(hash_int)[:length]
         return code
