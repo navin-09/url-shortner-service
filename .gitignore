@@ -1,0 +1,76 @@
+# ----------------------------------------
+# Python / Flask
+# ----------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# ----------------------------------------
+# Virtual environment
+# ----------------------------------------
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+
+# ----------------------------------------
+# Flask specific
+# ----------------------------------------
+instance/
+*.db         # SQLite databases
+*.sqlite3
+*.sqlite
+
+# Flask cache, session, temp files
+.flaskenv
+*.log
+
+# ----------------------------------------
+# Environment variables / secrets
+# ----------------------------------------
+.env
+.env.*
+*.env.local
+config.env
+
+# ----------------------------------------
+# Pip / dependencies
+# ----------------------------------------
+pip-log.txt
+pip-wheel-metadata/
+
+# ----------------------------------------
+# Build / distribution
+# ----------------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ----------------------------------------
+# IDE / Editor files
+# ----------------------------------------
+.vscode/
+.idea/
+*.iml
+
+# ----------------------------------------
+# OS files
+# ----------------------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------------------
+# Docker
+# ----------------------------------------
+docker-compose.override.yml
+*.pid

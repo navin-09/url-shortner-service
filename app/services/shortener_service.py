@@ -48,6 +48,7 @@ class UrlService:
         cached_url = redis_client.get(f"url:{code}")
         if cached_url:
             redis_client.incr(f"clicks:{code}")
+            self.repo.increment_click(db, code)
             return cached_url
 
         # 2️⃣ Fallback to Postgres

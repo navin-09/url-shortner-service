@@ -1,27 +1,3 @@
-# # ---------- Stage 1: build ----------
-# FROM python:3.11-slim AS builder
-
-# WORKDIR /app
-# COPY requirements.txt .
-# RUN apt-get update && apt-get install -y gcc libpq-dev --no-install-recommends && \
-#     pip install --no-cache-dir -r requirements.txt && \
-#     apt-get purge -y --auto-remove gcc
-
-# # ---------- Stage 2: runtime ----------
-# FROM python:3.11-slim
-
-# WORKDIR /app
-# COPY --from=builder /usr/local/lib/python3.11 /usr/local/lib/python3.11
-# COPY app ./app
-# COPY .env .env
-
-# ENV PYTHONUNBUFFERED=1
-# EXPOSE 8080
-
-# CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
-    
-
-
 # ---------- Stage 1: build ----------
 FROM python:3.11-slim AS builder
 
